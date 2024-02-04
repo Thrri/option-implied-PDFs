@@ -23,6 +23,7 @@ The problem of extracting the implied PDF of stock prices has commonly and succe
 ![Butterfly Structure Plot](./images/butterfly_structure.png)
 
 The payoff of the butterfly structure is:
+
 $$
 Butterfly(K_1, K_2, K_3) = C_T(K_1) - 2\cdot C_T(K_2) + C_T(K_3)
 $$
