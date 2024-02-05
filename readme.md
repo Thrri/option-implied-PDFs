@@ -37,7 +37,8 @@ The method of constructing option butterflies offers a viable pathway to extract
 The method of calculating the "butterfly implied probabilities" is flawed in the sense that the payoff has to be assumed to be binary, even though it is not. It assumes either maximum payoff or nothing at all. To improve the estimation for the probabilities we consider a butterfly spread, i.e. a portfolio of four call options. A long call at strike $K - dK$, two short calls at strike $K$ and a final long call at strike $K + dK$. If the portfolio contains $(1/dK)^2$ units of each call, we can write for the terminal value of the portfolio:
 
 $$
-P(S_T, K, dK, T) = \frac{1}{dK^2}\{\max(S_T-(K-dK), 0) - 2 \cdot \max(S_T-K, 0) + \max(S_T-(K+dK), 0)\}
+P(S_T, K, dK, T) = \frac{1}{dK^2} \left[ \max(S_T-(K-dK), 0) - 2 \cdot \max(S_T-K, 0) + \max(S_T-(K+dK), 0) \right]
+
 $$
 
 This portfolio carries the following payoff structure for three different values of $dK$
@@ -101,13 +102,37 @@ However, this approach is not without challenges. The accuracy of the resulting 
 Theoretical implementation of the aforementioned methods calls for the definition of underlying probability distributions in order to calculate the option prices. We use two different PDFs to test the robustness of each method. Firstly through a unimodal log-normal distribution with parameters
 
 $$
-\mu = 5\%, \quad \sigma = 20\%, \quad T = 1
+\mu = 5\%
+$$
+$$
+\sigma = 20\%
+$$
+$$
+T = 1
 $$
 
 And secondly, through a mixture of two log-normal distributions, resulting in a bimodally shaped distribution characterized by the parameters
 
 $$
-\mu_1 = -5\%, \quad \sigma_1 = 9\%, \quad \omega_1 = 0.5, \quad \mu_2 = 15\%, \quad \sigma_2 = 5\%, \quad \omega_2 = 0.5, \quad T = 1
+\mu_1 = -5\%
+$$
+$$
+\sigma_1 = 9\%
+$$
+$$
+\omega_1 = 0.5
+$$
+$$
+\mu_2 = 15\%
+$$
+$$
+\sigma_2 = 5\%
+$$
+$$
+\omega_2 = 0.5
+$$
+$$
+T = 1
 $$
 
 Establishing these parameters, allows for the use of the Black-Scholes model to calculate the log-normal option prices and the integral approach, discussed in the methodology chapter, to calculate option prices based on the more complicated PDFs. All option prices are calculated using the same parameters of
