@@ -37,7 +37,7 @@ The method of constructing option butterflies offers a viable pathway to extract
 The method of calculating the "butterfly implied probabilities" is flawed in the sense that the payoff has to be assumed to be binary, even though it is not. It assumes either maximum payoff or nothing at all. To improve the estimation for the probabilities we consider a butterfly spread, i.e. a portfolio of four call options. A long call at strike $K - dK$, two short calls at strike $K$ and a final long call at strike $K + dK$. If the portfolio contains $(1/dK)^2$ units of each call, we can write for the terminal value of the portfolio:
 
 $$
-P(S_T, K, dK, T) = \frac{1}{dK^2}\left\{\max(S_T-(K-dK), 0) - 2 \cdot \max(S_T-K, 0) + \max(S_T-(K+dK), 0)\right\}
+P(S_T, K, dK, T) = \frac{1}{dK^2}\{\max(S_T-(K-dK), 0) - 2 \cdot \max(S_T-K, 0) + \max(S_T-(K+dK), 0)\}
 $$
 
 This portfolio carries the following payoff structure for three different values of $dK$
