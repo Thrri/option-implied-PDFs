@@ -38,7 +38,6 @@ The method of calculating the "butterfly implied probabilities" is flawed in the
 
 $$
 P(S_T, K, dK, T) = \frac{1}{dK^2} \left[ \max(S_T-(K-dK), 0) - 2 \cdot \max(S_T-K, 0) + \max(S_T-(K+dK), 0) \right]
-
 $$
 
 This portfolio carries the following payoff structure for three different values of $dK$
@@ -104,9 +103,11 @@ Theoretical implementation of the aforementioned methods calls for the definitio
 $$
 \mu = 5\%
 $$
+
 $$
 \sigma = 20\%
 $$
+
 $$
 T = 1
 $$
@@ -116,21 +117,27 @@ And secondly, through a mixture of two log-normal distributions, resulting in a 
 $$
 \mu_1 = -5\%
 $$
+
 $$
 \sigma_1 = 9\%
 $$
+
 $$
 \omega_1 = 0.5
 $$
+
 $$
 \mu_2 = 15\%
 $$
+
 $$
 \sigma_2 = 5\%
 $$
+
 $$
 \omega_2 = 0.5
 $$
+
 $$
 T = 1
 $$
